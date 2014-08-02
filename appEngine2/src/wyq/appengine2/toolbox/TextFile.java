@@ -2,6 +2,7 @@ package wyq.appengine2.toolbox;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -47,9 +48,9 @@ import java.net.URI;
  * </p>
  * 
  * @author dewafer
- * @version 2
+ * @version 2.1
  */
-public class TextFile extends File {
+public class TextFile extends File implements Closeable {
 
 	/**
 	 * 
