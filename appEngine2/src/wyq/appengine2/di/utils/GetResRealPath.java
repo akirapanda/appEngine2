@@ -9,6 +9,20 @@ import java.net.URL;
 import wyq.appengine2.di.utils.RetryLookup.NotFound;
 import wyq.appengine2.di.utils.RetryLookup.NotNullFilter;
 
+/**
+ * This class helps get the real path of the resource in the following orders:
+ * <ol>
+ * <li>Resource at the same position with the class. If class is null,
+ * getClass() method is used.</li>
+ * <li>Resource at application root.</li>
+ * <li>Resource at relative path against application root.</li>
+ * </ol>
+ * 
+ * @since 2
+ * @version 1.0
+ * @author dewafer
+ *
+ */
 public class GetResRealPath {
 
 	private Class<?> clazz;
@@ -75,20 +89,20 @@ public class GetResRealPath {
 
 	}
 
-//	private String realPath = null;
-//
-//	@Override
-//	public String toString() {
-//		if (realPath == null) {
-//			try {
-//				realPath = getResRealPath().toExternalForm();
-//			} catch (MalformedURLException | URISyntaxException
-//					| NullPointerException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		return realPath == null ? name : realPath;
-//	}
+	// private String realPath = null;
+	//
+	// @Override
+	// public String toString() {
+	// if (realPath == null) {
+	// try {
+	// realPath = getResRealPath().toExternalForm();
+	// } catch (MalformedURLException | URISyntaxException
+	// | NullPointerException e) {
+	// e.printStackTrace();
+	// }
+	// }
+	//
+	// return realPath == null ? name : realPath;
+	// }
 
 }

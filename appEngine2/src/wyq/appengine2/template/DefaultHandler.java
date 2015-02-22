@@ -23,7 +23,16 @@ public class DefaultHandler implements TemplateEngineHandler {
 		Class<?> clazz = method.getDeclaringClass();
 		String fileName = clazz.getSimpleName() + "_" + method.getName()
 				+ ".template";
-		String template = new TextFile(getRealPath(clazz, fileName)).readAll();
+		String template = null;
+		TextFile textFile = null;
+		try {
+			textFile = new TextFile(getRealPath(clazz, fileName));
+			template = textFile.readAll();
+		} finally {
+			if (textFile != null) {
+				textFile.close();
+			}
+		}
 
 		Pattern p = Pattern.compile("/\\*\\w+\\*/");
 		Matcher m = p.matcher(template);

@@ -6,7 +6,7 @@ package wyq.appengine2.db;
  * @author dewafer
  * 
  */
-public class DefaultConnProvider implements ConnectionProvider {
+public class DefaultConnectionProvider implements ConnectionProvider {
 
 	private String username;
 	private String password;
@@ -18,7 +18,7 @@ public class DefaultConnProvider implements ConnectionProvider {
 		return username;
 	}
 
-	public DefaultConnProvider(String sqlConnProviderClass,
+	public DefaultConnectionProvider(String sqlConnProviderClass,
 			String connectionString, String username, String password) {
 		this.sqlConnProviderClass = sqlConnProviderClass;
 		this.connectionString = connectionString;

@@ -38,7 +38,16 @@ public class DefaultHandler implements DaoEngineHandler, DBEngineHandler {
 		Class<?> clazz = method.getDeclaringClass();
 		String fileName = clazz.getSimpleName() + "_" + method.getName()
 				+ ".sql";
-		String sql = new TextFile(getRealPath(clazz, fileName)).readAll();
+		String sql = null;
+		TextFile textFile = null;
+		try {
+			textFile = new TextFile(getRealPath(clazz, fileName));
+			sql = textFile.readAll();
+		} finally {
+			if (textFile != null) {
+				textFile.close();
+			}
+		}
 
 		daoResult = null;
 		// params = getSqlParams(args);

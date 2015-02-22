@@ -5,6 +5,14 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
 
+/**
+ * Base class for all the injectors.
+ * 
+ * @since 2
+ * @version 1.0
+ * @author dewafer
+ *
+ */
 public abstract class AbstractInjector {
 
 	public AbstractInjector() {

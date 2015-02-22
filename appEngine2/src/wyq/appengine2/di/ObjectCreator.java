@@ -7,6 +7,26 @@ import wyq.appengine2.di.utils.RetryLookup;
 import wyq.appengine2.di.utils.RetryLookup.LookupFilter;
 import wyq.appengine2.di.utils.RetryLookup.NotFound;
 
+/**
+ * This class provides the ability to create objects according to the assigned
+ * parameters. If interface instead of class is assigned, the implementation
+ * will be looked for in the following orders:
+ * <ol>
+ * <li>package.name.ClassNameImpl</li>
+ * <li>package.name.impl.ClassNameImpl</li>
+ * <li>package.name.impl.ClassName</li>
+ * <li>package.name.DefaultClassName</li>
+ * <li>package.name.DefaultHandler</li>
+ * </ol>
+ * Created objects will not be cached.
+ * 
+ * @author dewafer
+ * @since 2
+ * @version 1.0
+ *
+ * @param <T>
+ *            type of the expected object
+ */
 public class ObjectCreator<T> {
 
 	private Class<T> mClass;

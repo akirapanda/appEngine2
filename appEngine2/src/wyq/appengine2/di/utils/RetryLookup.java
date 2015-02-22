@@ -2,6 +2,20 @@ package wyq.appengine2.di.utils;
 
 import java.util.Iterator;
 
+/**
+ * This abstract class provides the retryable lookup ability. Override the
+ * tryLookup(T) method to implement the lookup action. Provide the constructor
+ * with the things to be searched and the filter to accept the result.
+ * 
+ * @author dewafer
+ * @since 2
+ * @version 1.0
+ *
+ * @param <R>
+ *            type of the expected result
+ * @param <T>
+ *            type of things to be searched
+ */
 public abstract class RetryLookup<R, T> implements Iterable<T> {
 
 	private T[] lookups;

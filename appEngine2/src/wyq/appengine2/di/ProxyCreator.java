@@ -10,6 +10,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * This class provides the ability to create dynamic proxy objects. Proxies
+ * created by this class will be cached. The InvocationHandler of the cached
+ * proxy will be reused if the the delegating interfaces is expended.
+ * 
+ * @author dewafer
+ * @since 2
+ * @version 1.0
+ *
+ */
 public class ProxyCreator {
 
 	private static ProxyCreator proxyCreator = new ProxyCreator();

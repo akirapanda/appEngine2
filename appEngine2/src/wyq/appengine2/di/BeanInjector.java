@@ -4,6 +4,15 @@ import java.beans.PropertyDescriptor;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Inject the bean. Objects will be created using ObjectCreator.create(), and
+ * will be cached. Usage: <code>objectInjected = BeanInjector.inject(objectToBeInjected);</code>
+ * 
+ * @author dewafer
+ * @since 2
+ * @version 1.0
+ *
+ */
 public class BeanInjector extends AbstractInjector {
 
 	private static BeanInjector injector = new BeanInjector();
